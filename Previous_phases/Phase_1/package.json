@@ -1,0 +1,14 @@
+{
+  "name": "chess-api",
+  "version": "1.0.0",
+  "description": "Node REST API for Chess",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "Praveen Avanigadda",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
