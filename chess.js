@@ -186,7 +186,15 @@ const Chess = function () {
   };
 
   const movePiece = (move) => {
-    if (!move || !move.piece || !move.color || !move.from || !move.to) {
+    if (
+      !move ||
+      !move.piece ||
+      !move.color ||
+      !move.from ||
+      !move.to ||
+      !move.fromMatrixNotation ||
+      !move.toMatrixNotation
+    ) {
       throw "Invalid move object passed";
     }
     if (move.color !== turn) {

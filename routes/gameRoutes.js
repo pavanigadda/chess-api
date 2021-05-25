@@ -22,6 +22,8 @@ const gameController = new GameController(Game);
  *           properties:
  *             fen:
  *               type: string
+ *               required: false
+ *               example: "rnbqkbnr/pp1ppppp/2P5/8/8/8/PP1PPPPP/RNBQKBNR b - - 0 1"
  *     responses:
  *      '200':
  *        description: A successful response
@@ -68,9 +70,12 @@ router.route("/:gameId").get(gameController.getGameState);
  *         in: body
  *         schema:
  *           type: object
+ *           required: false
  *           properties:
  *             position:
  *               type: string
+ *               required: false
+ *               example: "h7"
  *     responses:
  *      '200':
  *        description: A successful response
@@ -104,16 +109,27 @@ router.route("/:gameId/moves").post(gameController.getGameMoves);
  *                 color:
  *                    type: string
  *                    required: true
+ *                    example: "w"
  *                 from:
  *                    type: integer
+ *                    required: true
+ *                    example: 23
  *                 to:
  *                    type: integer
+ *                    required: true
+ *                    example: 55
  *                 fromMatrixNotation:
  *                    type: string
+ *                    required: true
+ *                    example: "h7"
  *                 toMatrixNotation:
  *                    type: string
+ *                    required: true
+ *                    example: "h5"
  *                 piece:
  *                    type: string
+ *                    required: true
+ *                    example: "p"
  *     responses:
  *      '200':
  *        description: A successful response
